@@ -1,7 +1,41 @@
 $(function() {
 
-	// Custom JS
+    // Accordeon
+    if(jQuery('.accordeon').length) {
+        var contents = $('.accordeon-content');
+        var titles = $('.accordeon-title');
+        titles.on('click',function(){
+        var title = $(this);
+        contents.filter(':visible').slideUp(function(){
+            $(this).prev('.accordeon-title').removeClass('is-opened');
+        });  
+        
+        var content = title.next('.accordeon-content'); 
+        
+        if (!content.is(':visible')) {
+            content.slideDown(function(){title.addClass('is-opened')});
+        } 
+        });
+    }
+     if(jQuery('.calc__total').length) {
 
+        $('.calcTable__line input').on('click', function()  {
+            var start = $('.calc__total').html();
+            $this = this;
+            var sum = $(this).attr('data-value');
+            console.log($(this).prop('checked'));
+            if ($(this).prop('checked')) {
+                var rezult = parseInt(start) + parseInt(sum);
+            } else {
+                var rezult = parseInt(start) - parseInt(sum);
+            }
+            
+            $('.calc__total').html(rezult);
+            console.log($(this).attr('data-value'));
+            console.log(rezult);
+
+        });
+     }
 });
 
 

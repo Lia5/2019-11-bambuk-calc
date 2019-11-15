@@ -1,67 +1,199 @@
 .calc
   .container
     .calc__title Calculator
-    .calc__first
-        .calc__img
-                img(src="img/bambuk-velo.jpg", alt="")
-        .calc__price-wrap
-            .calc__price Total sum:
-            .calc__price
-                .calc__total 7350
-                span Euro
-    .row
-        .col-lg-6.col-md-12.col-sm-12.col-xs-12
-    .calc__table.calcTable
-        .calcTable__head
-            .calcTable__data TECHNICAL DATA
-            .calcTable__config BASIC CONFIGURATION
-        .calcTable__body
-            .calcTable__line
-                .calcTable__data TYPE
-                .calcTable__config tricycle-tandem
-            .calcTable__line
-                .calcTable__data FRAME
-                .calcTable__config teleskopic frame adjustable for boby sizes from 150cm to 200cm
-            .calcTable__line.calcTable__subline
+    form(action="")
+        .calc__first
+            .calc__img
+                    img(src="img/bambuk-velo.jpg", alt="")
+            .calc__price-wrap
+                .calc__price Total sum:
+                .calc__price
+                    .calc__total 7350
+                    span Euro
+        .row
+            .col-lg-6.col-md-12.col-sm-12.col-xs-12
+        .calc__table.calcTable.accordeon
+            .calcTable__head.accordeon-title
+                .calcTable__data TECHNICAL DATA
+                .calcTable__config BASIC CONFIGURATION
+            .calcTable__body.accordeon-content
                 .calcTable__line
-                    .calcTable__data DIMENSIONS
-                    .calcTable__config 2 x 24“ front wheels, 26“ rear wheel
+                    .calcTable__data TYPE
+                    .calcTable__config tricycle-tandem
                 .calcTable__line
-                    .calcTable__data … ready to use
-                    .calcTable__config 260-280cm depending on body size width 95cm, height max. 100cm
+                    .calcTable__data FRAME
+                    .calcTable__config teleskopic frame adjustable for boby sizes from 150cm to 200cm
+                .calcTable__line.calcTable__subline
+                    .calcTable__line
+                        .calcTable__data DIMENSIONS
+                        .calcTable__config 2 x 24“ front wheels, 26“ rear wheel
+                    .calcTable__line
+                        .calcTable__data … ready to use
+                        .calcTable__config 260-280cm depending on body size width 95cm, height max. 100cm
+                    .calcTable__line
+                        .calcTable__data … for transportation
+                        .calcTable__config 190cm x 95cm x 100cm (LxWxH)
                 .calcTable__line
-                    .calcTable__data … for transportation
-                    .calcTable__config 190cm x 95cm x 100cm (LxWxH)
-            .calcTable__line
-                .calcTable__data FRONT SUSPENSION
-                .calcTable__config double leaf spring
-            .calcTable__line
-                .calcTable__data REAR SUSPENSION
-                .calcTable__config spring-oil damper, individually adjustable
-            .calcTable__line
-                .calcTable__data SEERING
-                .calcTable__config steering from the front seat
-            .calcTable__line
-                .calcTable__data MAIN BRAKE
-                .calcTable__config 2 x hydraulic front wheel disc brakes, 180mm, with locking function
-            .calcTable__line
-                .calcTable__data SECOND BRAKE
-                .calcTable__config rear mechanical disc brake (Avid BB5), 180mm, with locking function
-            .calcTable__line
-                .calcTable__data GEERING
-                .calcTable__config 
-                    | Rohloff 14-speed hub, controls from rear seat* 
+                    .calcTable__data FRONT SUSPENSION
+                    .calcTable__config double leaf spring
+                .calcTable__line
+                    .calcTable__data REAR SUSPENSION
+                    .calcTable__config spring-oil damper, individually adjustable
+                .calcTable__line
+                    .calcTable__data SEERING
+                    .calcTable__config steering from the front seat
+                .calcTable__line
+                    .calcTable__data MAIN BRAKE
+                    .calcTable__config 2 x hydraulic front wheel disc brakes, 180mm, with locking function
+                .calcTable__line
+                    .calcTable__data SECOND BRAKE
+                    .calcTable__config rear mechanical disc brake (Avid BB5), 180mm, with locking function
+                .calcTable__line
+                    .calcTable__data GEERING
+                    .calcTable__config 
+                        | Rohloff 14-speed hub, controls from rear seat* 
+                        br
+                        span * in this configuration with the freewheel for the front person, without extra charge
+                .calcTable__line
+                    .calcTable__data ELECTRIC MOTOR
+                    .calcTable__config e-middle motor, 250W, 36V, 80Nm, display on handle bar, starting aid up 6 kmh, charger
+                .calcTable__line
+                    .calcTable__data BATTERY
+                    .calcTable__config 14,5 Ah, 36V, with a lock and a key
+                .calcTable__line
+                    .calcTable__data REAR RACK
+                    .calcTable__config BamBuk rear rack with mounted LED-tail light, standard fixation for side bags
+                .calcTable__line
+                    .calcTable__data LED HEADLIGHT
+                    .calcTable__config 30 LUX, with integrated front reflektor, incl. charging cable
+            .calcTable__head.accordeon-title.is-opened
+                .calcTable__data ADDITIONAL OPTIONS
+                .calcTable__config TECHNICAL DATA
+                .calcTable__price PRICES VAT FREE
+            .calcTable__body.accordeon-content(style="display: block;")
+                .calcTable__line
+                    label(for="checkbox_1")
+                        .calcTable__data CARRIER FOR A TRAILER COUPLING
+                        .calcTable__config E-Trike Tandems transportation carrier for a trailer coupling,    incl. 3 loading ramps
+                        .calcTable__price 1109 Euro
+                        .calcTable__checkbox
+                            input#checkbox_1(type='checkbox', name='trailer_coupling', data-value='1109')
+
+                .calcTable__line
+                    label(for="checkbox_2")
+                        .calcTable__data ADDITIONAL BATTERY
+                        .calcTable__config 14,5Ah, 36V
+                        .calcTable__price 629 Euro
+                        .calcTable__checkbox
+                            input#checkbox_2(type='checkbox', name='BATTERY', data-value='629')
+                .calcTable__line
+                    label(for="checkbox_3")
+                        .calcTable__data BATTERY HOLDER FOR ADDITIONAL BATTERY
+                        .calcTable__config space saving storage for the additional battery,                                with a lock and a key
+                        .calcTable__price 487 Euro
+                        .calcTable__checkbox
+                            input#checkbox_3(type='checkbox', name='BATTERY_HOLDER', data-value='487')
+                .calcTable__line
+                    label(for="checkbox_4")
+                        .calcTable__data STEERING FROM REAR SEAT *
+                        .calcTable__config all controls from the rear: steering, Rohloff shifting, motor display and control, both front and rear brake handles
+                        .calcTable__price 571 Euro
+                        .calcTable__checkbox
+                            input#checkbox_4(type='checkbox', name='REAR_SEAT', data-value='571' )
+                .calcTable__line
+                    label(for="checkbox_5")
+                        .calcTable__data COMFORT SEATS 
+                        .calcTable__config padded seats, both front and rear
+                        .calcTable__price 250 Euro
+                        .calcTable__checkbox
+                            input#checkbox_5(type='checkbox', name='COMFORT_SEATS', data-value='250')
+                .calcTable__line
+                    label(for="checkbox_6")
+                        .calcTable__data UPGRADED LED HEADLIGHT
+                        .calcTable__config 80 LUX, incl. charging cable, with a separate reflector
+                        .calcTable__price 81 Euro
+                        .calcTable__checkbox
+                            input#checkbox_6(type='checkbox', name='LED_HEADLIGHT', data-value='81')
+                .calcTable__line
+                    label(for="checkbox_7")
+                        .calcTable__data MIRROR
+                        .calcTable__config mounted on the handlebar 
+                        .calcTable__price 32 Euro
+                        .calcTable__checkbox
+                            input#checkbox_7(type='checkbox', name='MIRROR', data-value='32')
+                .calcTable__line
+                    label(for="checkbox_8")
+                        .calcTable__data REAR RACK SIDE BAGS
+                        .calcTable__config rear rack side bags (ex. Ortlieb, VAUDE), water resistant, price depending on model
+                        .calcTable__price  140 Euro
+                        .calcTable__checkbox
+                            input#checkbox_8(type='checkbox', name='REAR_RACK_SIDE_BAGS', data-value='140')
+                .calcTable__line
+                    label(for="checkbox_9")
+                        .calcTable__data BAMBUK SPECIAL CRANK
+                        .calcTable__config with adjustable crank length from 170mm down to 0mm (at 0mm the rear person has a rest), price per side, left or right
+                        .calcTable__price 160 Euro
+                        .calcTable__checkbox
+                            input#checkbox_9(type='checkbox', name='CRANK', data-value='160')
+                .calcTable__line
+                    label(for="checkbox_10")
+                        .calcTable__data SPECIAL PEDALS
+                        .calcTable__config HP pedals with heel support, price per side, left or right
+                        .calcTable__price 57 Euro
+                        .calcTable__checkbox
+                            input#checkbox_10(type='checkbox', name='SPECIAL_PEDALS', data-value='57')
+                .calcTable__line
+                    label(for="checkbox_11")
+                        .calcTable__data CLICK PEDALS (PAIR)
+                        .calcTable__config Shimano Trekking-System pedals, with one side with SPD-click, other side for normal shoes, price fort he pair
+                        .calcTable__price 54 Euro
+                        .calcTable__checkbox
+                            input#checkbox_11(type='checkbox', name='CLICK_PEDALS', data-value='54')
+                .calcTable__line
+                    label(for="checkbox_12")
+                        .calcTable__data 5-POINT BELT WITH SHOULDER PADS
+                        .calcTable__config with magnet lock, anti-open system
+                        .calcTable__price 96 Euro
+                        .calcTable__checkbox
+                            input#checkbox_12(type='checkbox', name='BELT', data-value='96')
+                .calcTable__line
+                    label(for="checkbox_13")
+                        .calcTable__data SHIFTING CONTROL FROM THE FRONT SEAT **
+                        .calcTable__config Rohloff-shifting control from the front seat**
+                        .calcTable__price 160 Euro
+                        .calcTable__checkbox
+                            input#checkbox_13(type='checkbox', name='SHIFTING_CONTROL', data-value='160')
+                .calcTable__line * with freewheel for the front person, the main battery is mounted in the battery holder under the rear seat 
+                .calcTable__line ** IMPORTANT! with this option it is not possible to install the freewheel for the front person!
+        .calc__info
+           .price_list_modal.modal(style='opacity: 1;', tabindex='0')
+                h2   
+                .subtitle
+                    | Отправьте данные и мы с вами свяжемся         
                     br
-                    span * in this configuration with the freewheel for the front person, without extra charge
-            .calcTable__line
-                .calcTable__data ELECTRIC MOTOR
-                .calcTable__config e-middle motor, 250W, 36V, 80Nm, display on handle bar, starting aid up 6 kmh, charger
-            .calcTable__line
-                .calcTable__data BATTERY
-                .calcTable__config 14,5 Ah, 36V, with a lock and a key
-            .calcTable__line
-                .calcTable__data REAR RACK
-                .calcTable__config BamBuk rear rack with mounted LED-tail light, standard fixation for side bags
-            .calcTable__line
-                .calcTable__data LED HEADLIGHT
-                .calcTable__config 30 LUX, with integrated front reflektor, incl. charging cable
+                    |   per E-mail.
+                form.form
+                    input(type='hidden', name='action1', value='Price list')
+                    .half_input.pull-left
+                    label.label(for='price_list_name') Name
+                    input#price_list_name(name='userName', type='text')
+                    .half_input.pull-right
+                    label.label(for='price_list_phone') Telefonnummer
+                    input#price_list_phone(name='phone', type='text')
+                    .clearfix
+                    label.label(for='price_list_email')
+                    | E-Mail Adresse
+                    sup *
+                    input#price_list_email(name='email', type='email', required='true')
+                    input#checkbox3(type='checkbox', required='', name='confirm')
+                    label(for='checkbox3')
+                    | Ja, ich bin einverstanden von BamBuk E-Trike  Team kontaktiert zu werden.
+                    sup *
+                    br
+                    br
+                    .description
+                        sup *
+                        | Pflichtfeld
+                    button.fill_btn(type='submit') SENDEN
+
+        button.btn.calc__btn(type='submit') SEND
