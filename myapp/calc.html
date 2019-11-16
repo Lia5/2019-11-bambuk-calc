@@ -60,7 +60,7 @@
             <div class="calc__price-wrap">
               <div class="calc__price">Total sum:</div>
               <div class="calc__price">
-                <div class="calc__total">7350</div><span>Euro</span>
+                <input type="text" readonly value="7350" class="calc__total"><span>Euro</span>
               </div>
             </div>
           </div>
@@ -282,22 +282,21 @@
           <div class="calc__info">
             <div style="opacity: 1;" tabindex="0" class="price_list_modal modal">
               <h2>  </h2>
-              <div class="subtitle">Отправьте данные и мы с вами свяжемся         <br>  per E-mail.</div>
+              <div class="subtitle">Send the data and we will contact you         </div>
               <form class="form">
-                <input type="hidden" name="action1" value="Price list">
+                <input type="hidden" name="action1" value="Calc info">
                 <div class="half_input pull-left"></div>
-                <label for="price_list_name" class="label">Name</label>
-                <input id="price_list_name" name="userName" type="text">
+                <label for="calc_name" class="label">Name</label>
+                <input id="calc_name" name="userName" type="text">
                 <div class="half_input pull-right"></div>
-                <label for="price_list_phone" class="label">Telefonnummer</label>
-                <input id="price_list_phone" name="phone" type="text">
+                <label for="calc_phone" class="label">Phone number</label>
+                <input id="calc_phone" name="phone" type="text">
                 <div class="clearfix"></div>
-                <label for="price_list_email" class="label"></label>E-Mail Adresse<sup>*</sup>
-                <input id="price_list_email" name="email" type="email" required="true">
-                <input id="checkbox3" type="checkbox" required="" name="confirm">
-                <label for="checkbox3"></label>Ja, ich bin einverstanden von BamBuk E-Trike  Team kontaktiert zu werden.<sup>*</sup><br><br>
-                <div class="description"><sup>*</sup>Pflichtfeld</div>
-                <button type="submit" class="fill_btn">SENDEN</button>
+                <label for="calc_email" class="label"></label>Email address<sup>***</sup>
+                <input id="calc_email" name="email" type="email" required="true">
+                <input id="calc_checkbox" type="checkbox" required="" name="confirm">
+                <label for="calc_checkbox"></label>Yes, I would like the BamBuk team to contact me. We promise we won't overload you with information and marketing materials!<sup>***</sup><br><br>
+                <div class="description"><sup>***</sup>obligatory information</div>
               </form>
             </div>
           </div>

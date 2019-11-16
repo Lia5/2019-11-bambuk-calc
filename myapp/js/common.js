@@ -20,7 +20,8 @@ $(function() {
      if(jQuery('.calc__total').length) {
 
         $('.calcTable__line input').on('click', function()  {
-            var start = $('.calc__total').html();
+            var start = $('.calc__total').val();
+            console.log(start);
             $this = this;
             var sum = $(this).attr('data-value');
             console.log($(this).prop('checked'));
@@ -30,7 +31,7 @@ $(function() {
                 var rezult = parseInt(start) - parseInt(sum);
             }
             
-            $('.calc__total').html(rezult);
+            $('.calc__total').val(rezult);
             console.log($(this).attr('data-value'));
             console.log(rezult);
 

@@ -8,7 +8,7 @@
             .calc__price-wrap
                 .calc__price Total sum:
                 .calc__price
-                    .calc__total 7350
+                    input(type="text" readonly value="7350" class="calc__total")
                     span Euro
         .row
             .col-lg-6.col-md-12.col-sm-12.col-xs-12
@@ -168,32 +168,28 @@
         .calc__info
            .price_list_modal.modal(style='opacity: 1;', tabindex='0')
                 h2   
-                .subtitle
-                    | Отправьте данные и мы с вами свяжемся         
-                    br
-                    |   per E-mail.
+                .subtitle Send the data and we will contact you         
                 form.form
-                    input(type='hidden', name='action1', value='Price list')
+                    input(type='hidden', name='action1', value='Calc info')
                     .half_input.pull-left
-                    label.label(for='price_list_name') Name
-                    input#price_list_name(name='userName', type='text')
+                    label.label(for='calc_name') Name
+                    input#calc_name(name='userName', type='text')
                     .half_input.pull-right
-                    label.label(for='price_list_phone') Telefonnummer
-                    input#price_list_phone(name='phone', type='text')
+                    label.label(for='calc_phone') Phone number
+                    input#calc_phone(name='phone', type='text')
                     .clearfix
-                    label.label(for='price_list_email')
-                    | E-Mail Adresse
-                    sup *
-                    input#price_list_email(name='email', type='email', required='true')
-                    input#checkbox3(type='checkbox', required='', name='confirm')
-                    label(for='checkbox3')
-                    | Ja, ich bin einverstanden von BamBuk E-Trike  Team kontaktiert zu werden.
-                    sup *
+                    label.label(for='calc_email')
+                    | Email address
+                    sup ***
+                    input#calc_email(name='email', type='email', required='true')
+                    input#calc_checkbox(type='checkbox', required='', name='confirm')
+                    label(for='calc_checkbox')
+                    | Yes, I would like the BamBuk team to contact me. We promise we won't overload you with information and marketing materials!
+                    sup ***
                     br
                     br
                     .description
-                        sup *
-                        | Pflichtfeld
-                    button.fill_btn(type='submit') SENDEN
-
+                        sup ***
+                        | obligatory information
+                    //- button.fill_btn(type='submit') SENDEN
         button.btn.calc__btn(type='submit') SEND

@@ -32,6 +32,13 @@
     }
 }
 .calc {
+    &__total {
+        width: 163px;
+        text-align: right;
+        background: transparent;
+        border: none;
+        outline: none;
+    }
     &__title {
         font-size: 35px;
         text-align: center;
