@@ -1,4 +1,7 @@
 //header
+body.calc-body {
+    min-width: 320px;
+}
 .calc input {
     position: relative;
     &:after {
@@ -10,6 +13,7 @@
         height: 100%;
         pointer-events: none;
         border: 3px solid transparent;
+        
     }
     &:focus {
         outline: none;
@@ -26,9 +30,18 @@
     line-height: 1;
     &__title {
         font-size: 40px;
+        @media (max-width: 767px) {
+            font-size: 28px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
     }
     &__subtitle {
         font-size: 25px;
+        @media (max-width: 767px) {
+            font-size: 16px;
+        }
     }
 }
 .calc {
@@ -38,6 +51,9 @@
         background: transparent;
         border: none;
         outline: none;
+        @media (max-width: 1199px) {
+            width: 106px;
+        }
     }
     &__title {
         font-size: 35px;
@@ -45,12 +61,18 @@
     }
     &__first {
         display: flex;
+        @media (max-width: 1199px) {
+            flex-wrap: wrap;
+        }
     }
     &__img {
         margin: 20px auto;
         float: none;
         width: 70%;
         img {
+            width: 100%;
+        }
+        @media (max-width: 700px) {
             width: 100%;
         }
     }
@@ -61,6 +83,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            @media (max-width: 700px) {
+                width: 100%;
+                margin-bottom: 25px;
+            }
         }
         
         font-size: 50px;
@@ -70,6 +96,9 @@
         align-items: center;
         span {
             padding-left: 10px;;
+        }
+        @media (max-width: 1199px) {
+            font-size: 36px;
         }
     }
     &__btn {
@@ -81,41 +110,87 @@
         display: flex;
         justify-content: center;
     } 
+    .modal {
+        @media (max-width: 700px) {
+            width: 100%;
+            padding: 30px 15px;
+        }
+    }
 }
 .calcTable {
     font-size: 16px;
+    @media (max-width: 500px) {
+        font-size: 14px;
+    }
     &__data {
         width: 20%;
         padding: 15px 5px;
         border-right: 1px solid #ebebeb;
+        @media (max-width: 1199px) {
+            width: 29%;
+        }
+        @media (max-width: 500px) {
+            width: 40%;
+            padding: 8px 5px;
+        }
     }
     &__config {
         flex-grow: 1;
         flex-basis: 0;
         padding: 15px 5px;
+        @media (max-width: 500px) {
+            width: 60%;
+            flex-grow: unset;
+            flex-basis: unset;
+            padding: 8px 5px;
+        }
     }
     &__price {
         width: 20%;
         padding: 15px 5px;
+        @media (max-width: 500px) {
+            width: 40%;
+            padding: 8px 5px 15px;
+        }
     }
     &__head {
         display: flex;
         background-color: #000;
         color: #fff;
         margin-bottom: 10px;
+        @media (max-width: 500px) {
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
         .calcTable__data {
             width: 20%;
             border-color: transparent;;
             padding: 15px;
+            @media (max-width: 1199px) {
+                width: 29%;
+            }
+            @media (max-width: 500px) {
+                width: 40%;
+                padding: 8px;
+            }
         }
         .calcTable__config {
             text-align: center;
             flex-grow: 1;
             flex-basis: 0;
             padding: 15px;
+            @media (max-width: 500px) {
+                width: 60%;
+                flex-grow: unset;
+                flex-basis: unset;
+                padding: 8px;
+            }
         }
         .calcTable__price {
             width: 20%;
+            @media (max-width: 500px) {
+                width: 100%;
+            }
         }
     }
     &__body {
@@ -124,9 +199,15 @@
     &__line {
         display: flex;
         cursor: pointer;
+        @media (max-width: 500px) {
+            flex-wrap: wrap;
+        }
         label {
             display: flex;
             width: 100%;
+            @media (max-width: 500px) {
+                flex-wrap: wrap;
+            }
         }
         &:nth-child(2n) {
             background-color: #ebebeb;
@@ -150,6 +231,11 @@
         width: 32px;
         height: 34px;
         align-self: center;
+        @media (max-width: 500px) {
+            width: 60%;
+            justify-content: center;
+            display: flex;
+        }
     }
     
 }
@@ -168,11 +254,17 @@
     text-align: center;
     padding: 2px;
     margin-top: 10px;
+    @media (max-width: 500px) {
+        content: none;
+    }
 
   }
   .accordeon-title.is-opened:after {
     content: '-';
     margin-top: 7px;
+    @media (max-width: 500px) {
+        content: none;
+    }
 
   }
   .accordeon-content {
