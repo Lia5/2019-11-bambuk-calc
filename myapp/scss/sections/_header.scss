@@ -148,10 +148,10 @@ body {
         &-wrap {
             width: 40%;
             padding: 60px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-end;
-            @media (max-width: 1199px) {
+            @media (max-width: 1199px) { 
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-end;
                 width: 100%;
                 margin-bottom: 0;
                 padding-bottom: 0;
@@ -179,6 +179,7 @@ body {
             width: 83%;
             margin: 0 auto;
             font-size: 38px;
+            justify-content: center;
         }
     }
     &__btn {
