@@ -2,73 +2,138 @@
 body.calc-body {
     min-width: 320px;
 }
+body {
+    font-family: 'CoreSansA45Regular';
+    font-size: 21px;
+    line-height: 25px;
+    color: #383E30;
+    @media (max-width: 850px) {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+    @media (max-width: 620px) {
+        font-size: 16px;
+    }
+}
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    @media (max-width: 1199px) {
+        padding: 0 40px;
+    }
+    @media (max-width: 620px) {
+        padding: 0 15px;
+    }
+}
 .calc input {
     position: relative;
-    &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        border: 3px solid transparent;
-        
-    }
     &:focus {
         outline: none;
         position: relative;
-        &:after {
-            border-color: #000;
-        }
+        
     }
+    
 }
 .calcheader {
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-    line-height: 1;
     &__title {
-        font-size: 40px;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: right;
+        text-transform: capitalize;
+        color: #383E30;
+
         @media (max-width: 767px) {
-            font-size: 28px;
+            font-size: 18px;
             margin-top: 20px;
             margin-bottom: 20px;
             text-align: center;
         }
     }
-    &__subtitle {
-        font-size: 25px;
-        @media (max-width: 767px) {
-            font-size: 16px;
+    &__logo {
+        display: block;
+        width: 204px;
+        svg {
+            width: 100%;
         }
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 0;
+        @media (max-width: 1199px) {
+            padding: 25px 40px;
+        }
+        @media (max-width: 620px) {
+            padding: 25px 15px;
+        }
+        
     }
 }
 .calc {
     &__total {
-        width: 163px;
-        text-align: right;
+        width: 173px;
         background: transparent;
         border: none;
         outline: none;
-        @media (max-width: 1199px) {
-            width: 106px;
+        font-family: "CoreSansM65Bold", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 60px;
+        line-height: 70px;
+        color: #383E30;
+        @media (max-width: 620px) {
+            font-size: 45px;
+            line-height: 1.2;
+            width: 130px;
         }
     }
     &__title {
-        font-size: 35px;
-        text-align: center;
+        font-family: "CoreSansM65Bold", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 30px;
+        line-height: 35px;
+        margin-bottom: 104px;
+        @media (max-width: 1199px) {
+            width: 100%;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        @media (max-width: 850px) {
+            margin-bottom: 15px;
+        }
+    }
+    &__subtitle {
+        font-size: 30px;
+        line-height: 35px;
+        margin-bottom: 20px;
+        @media (max-width: 1199px) {
+            width: 50%;
+            text-align: right;
+            padding-right: 50px;
+            box-sizing: border-box;
+        }
+        @media (max-width: 620px) {
+            width: 100%;
+            padding-right: 0;
+            text-align: center;
+            margin-bottom: 0;
+        }
     }
     &__first {
         display: flex;
+        margin-bottom: 61px;
         @media (max-width: 1199px) {
             flex-wrap: wrap;
         }
+        @media (max-width: 850px) {
+            margin-bottom: 40px;
+        }
+        @media (max-width: 620px) {
+            margin-bottom: 20px;
+        }
     }
     &__img {
-        margin: 20px auto;
+        margin: 0 auto;
         float: none;
-        width: 70%;
+        width: 60%;
         img {
             width: 100%;
         }
@@ -77,38 +142,172 @@ body.calc-body {
         }
     }
     &__price {
+        font-family: "CoreSansM65Bold", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 60px;
+        line-height: 70px;
         &-wrap {
-            width: 30%;
+            width: 40%;
+            padding: 60px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            @media (max-width: 700px) {
+            flex-wrap: wrap;
+            align-items: flex-end;
+            @media (max-width: 1199px) {
                 width: 100%;
-                margin-bottom: 25px;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+            @media (max-width: 850px) {
+                padding-top: 40px;
+            }
+            @media (max-width: 620px) {
+                padding: 20px 20px 0;
             }
         }
         
         font-size: 50px;
         text-align: center;
         display: flex;
-        justify-content: center;
         align-items: center;
         span {
             padding-left: 10px;;
         }
         @media (max-width: 1199px) {
+            width: 50%;
             font-size: 36px;
+        }
+        @media (max-width: 620px) {
+            width: 83%;
+            margin: 0 auto;
+            font-size: 38px;
         }
     }
     &__btn {
-        min-width: 264px;
-        margin: 20px auto;
+        cursor: pointer;
+        width: 100%;
+        font-family: "CoreSansM65Bold", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 35px;
+        line-height: 40px;
+        padding: 13px;
+        text-align: center;
         display: block;
+        background: #56A446;
+        color: #fff;
+        text-transform: uppercase;
+        border-color: transparent;
+        transition: 0.3s;
+        @media (max-width: 850px) {
+            margin-top: 40px;
+        }
+        @media (max-width: 620px) {
+            margin-top: 35px;
+            font-size: 30px;
+            line-height: 30px;
+            padding: 6px;
+        }
+        &:hover {
+            background: rgb(54, 119, 41);
+        }
     }
-    &__info {
+    &-info {
         display: flex;
         justify-content: center;
+        padding: 59px 0 96px;
+        background: #F5F5F5;
+        @media (max-width: 620px) {
+            padding: 40px 0;
+        }
+        &__rezult {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @media (max-width: 620px) {
+                display: block;
+                text-align: center;
+            }
+            .calc__price {
+                font-size: 35px;
+                line-height: 41px;
+                @media (max-width: 620px) {
+                    margin-top: 20px;
+                    justify-content: center;
+                }
+            }
+            .calc__total{
+                width: 101px;
+                font-size: 35px;
+                line-height: 41px;
+            }
+        }
+        &__form {
+            display: flex;
+            @media (max-width: 850px) {
+                display: block;
+            }
+        }
+        &__left {
+            width: 60%;
+            @media (max-width: 850px) {
+                width: 100%;
+                margin-top: 40px;
+            }
+            input {
+                padding: 20px;
+                background: #fff;
+                width: 100%;
+                border-color: transparent;
+                box-sizing: border-box;
+            }
+            label {
+                display: block;
+                font-size: 21px;
+                line-height: 25px;
+                margin: 15px 0 8px;
+            }
+        }
+        &__right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 40%;
+            padding-left: 65px;
+            @media (max-width: 850px) {
+                width: 100%;
+                padding-left: 0;
+            }
+        }
+        &__agree {
+            position: relative;
+            margin-top: 36px;
+            font-size: 18px;
+            line-height: 21px;
+            padding-left: 37px;
+            .calcTable__checkbox {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            input {
+                display: none;
+                visibility: hidden;
+                &:checked + .calcTable__checkbox {
+                    &:after {
+                        background: url("../img/tick.svg")  no-repeat;
+                    }
+                }
+            }
+            &:hover {
+                .calcTable__checkbox { 
+                    box-shadow: 0 0 6px rgba(72,165,72,.75);
+                    border-color: #49a647;
+                }
+            }
+
+        }
+        &__description {
+            font-size: 18px;
+            line-height: 21px;
+            margin-top: 30px;
+        }
     } 
     .modal {
         @media (max-width: 700px) {
@@ -118,18 +317,28 @@ body.calc-body {
     }
 }
 .calcTable {
-    font-size: 16px;
+    font-size: 21px;
+    line-height: 25px;
+    text-transform: capitalize;
+    @media (max-width: 850px) {
+        font-size: 18px;
+        line-height: 1.2;
+    }
     @media (max-width: 500px) {
         font-size: 14px;
     }
     &__data {
         width: 20%;
-        padding: 15px 5px;
-        border-right: 1px solid #ebebeb;
+        padding: 17px 24px;
+        // border-right: 1px solid #ebebeb;
         @media (max-width: 1199px) {
             width: 29%;
         }
+        @media (max-width: 850px) {
+            padding: 10px;
+        }
         @media (max-width: 500px) {
+            box-sizing: border-box;
             width: 40%;
             padding: 8px 5px;
         }
@@ -137,8 +346,12 @@ body.calc-body {
     &__config {
         flex-grow: 1;
         flex-basis: 0;
-        padding: 15px 5px;
+        padding: 17px 24px;
+        @media (max-width: 850px) {
+            padding: 10px;
+        }
         @media (max-width: 500px) {
+            box-sizing: border-box;
             width: 60%;
             flex-grow: unset;
             flex-basis: unset;
@@ -146,18 +359,25 @@ body.calc-body {
         }
     }
     &__price {
-        width: 20%;
+        width: 18%;
         padding: 15px 5px;
         @media (max-width: 500px) {
+            box-sizing: border-box;
             width: 40%;
             padding: 8px 5px 15px;
         }
     }
     &__head {
         display: flex;
+        font-size: 21px;
+        line-height: 25px;
         background-color: #000;
         color: #fff;
         margin-bottom: 10px;
+        @media (max-width: 850px) {
+            font-size: 17px;
+            line-height: 18px;
+        }
         @media (max-width: 500px) {
             flex-wrap: wrap;
             font-size: 13px;
@@ -165,7 +385,6 @@ body.calc-body {
         .calcTable__data {
             width: 20%;
             border-color: transparent;;
-            padding: 15px;
             @media (max-width: 1199px) {
                 width: 29%;
             }
@@ -175,10 +394,12 @@ body.calc-body {
             }
         }
         .calcTable__config {
-            text-align: center;
             flex-grow: 1;
             flex-basis: 0;
             padding: 15px;
+            @media (max-width: 850px) {
+                padding: 10px;
+            }
             @media (max-width: 500px) {
                 width: 60%;
                 flex-grow: unset;
@@ -188,13 +409,11 @@ body.calc-body {
         }
         .calcTable__price {
             width: 20%;
+            padding-right: 45px;
             @media (max-width: 500px) {
                 width: 100%;
             }
         }
-    }
-    &__body {
-        border: 1px solid #ebebeb;
     }
     &__line {
         display: flex;
@@ -210,16 +429,22 @@ body.calc-body {
             }
         }
         &:nth-child(2n) {
-            background-color: #ebebeb;
-            .calcTable__data {
-                border-color: #dad7d7;
-            }
+            background-color:  #F5F5F5;;
         }
         &:hover {
             color: #48a548;
-            input:after { 
+            .calcTable__checkbox { 
                 box-shadow: 0 0 6px rgba(72,165,72,.75);
                 border-color: #49a647;
+            }
+        }
+        input {
+            visibility: hidden;
+            display: none;
+            &:checked + .calcTable__checkbox {
+                &:after {
+                    background: url("../img/tick.svg")  no-repeat;
+                }
             }
         }
     }
@@ -227,41 +452,66 @@ body.calc-body {
         display: block;
     }
     &__checkbox {
-        width: 15px 5px;
-        width: 32px;
-        height: 34px;
+        border: 2px solid #aaa;
+        width: 20px;
+        height: 20px;
         align-self: center;
+        margin-right: 24px;
         @media (max-width: 500px) {
-            width: 60%;
+            box-sizing: border-box;
             justify-content: center;
             display: flex;
+            margin: 0 auto;
         }
+
+        position: relative;
+        
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 3px;
+            width: 30px;
+            height: 30px;
+            visibility: visible;
+        }
+    }
+    &__info {
+        margin-top: 30px;
+        margin-bottom: 50px;
     }
     
 }
 //cacc
 .accordeon-title {
     cursor: pointer;
+    position: relative;
+    margin-top: 40px;
+    @media (max-width: 620px) {
+        margin-top: 20px;
+    }
 }
 .accordeon-title:after {
-    content: '+';
-    float: right;
-    font-size: 34px;
-    color: #f2f2f2;
-    width: 34px;
-    height: 34px;
-    line-height: 0.8;
+    content: '';
+    position: absolute;
+    top: 26px;
+    right: 24px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    width: 6px;
+    height: 6px;
     text-align: center;
-    padding: 2px;
-    margin-top: 10px;
+    transform: rotate(45deg);
+    @media (max-width: 850px) {
+        top: 18px;
+    }
     @media (max-width: 500px) {
         content: none;
     }
 
   }
   .accordeon-title.is-opened:after {
-    content: '-';
-    margin-top: 7px;
+    transform: rotate(225deg);
     @media (max-width: 500px) {
         content: none;
     }
@@ -269,5 +519,4 @@ body.calc-body {
   }
   .accordeon-content {
     display: none;
-    padding: 10px;
   } 
